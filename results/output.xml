@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.4 on darwin)" generated="20251113 22:39:15.033" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="/Users/cinemaxxi/rsaputra/stockbit/android-automation-robot/tests/login">
+<suite id="s1-s1" name="Login Test" source="/Users/cinemaxxi/rsaputra/stockbit/android-automation-robot/tests/login/login_test.robot">
+<kw name="Application Has Opened" library="BaseKeywords" type="SETUP">
+<arg>${PLATFORM_NAME}</arg>
+<arg>${DEVICE_NAME}</arg>
+<arg>${PLATFORM_VERSION}</arg>
+<arg>${APP_PACKAGE}</arg>
+<arg>${APP_ACTIVITY}</arg>
+<arg>${REMOTE_URL}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${remote_url}</arg>
+<arg>platformName=${platform}</arg>
+<arg>deviceName=${device}</arg>
+<arg>platformVersion=${version}</arg>
+<arg>appPackage=${app_package_or_bundle}</arg>
+<arg>appActivity=${app_activity}</arg>
+<arg>automationName=UiAutomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20251113 22:39:15.130" endtime="20251113 22:39:18.654"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:15.130" endtime="20251113 22:39:18.654"/>
+</kw>
+<test id="s1-s1-t1" name="Login Test Valid Credentials" line="9">
+<kw name="Go To Login Page" library="HomePage">
+<kw name="Click Button Menu" library="HomePage">
+<kw name="Click Element By Id" library="BaseKeywords">
+<arg>${MENU_BUTTON}</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:18.659" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/menuIV'.</msg>
+<msg timestamp="20251113 22:39:20.460" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/menuIV</msg>
+<status status="PASS" starttime="20251113 22:39:18.658" endtime="20251113 22:39:20.460"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:18.657" endtime="20251113 22:39:20.460"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:18.657" endtime="20251113 22:39:20.460"/>
+</kw>
+<kw name="Click Login Text Button" library="HomePage">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_TEXTBUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:20.461" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Log In"]'.</msg>
+<msg timestamp="20251113 22:39:20.664" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Log In"]</msg>
+<status status="PASS" starttime="20251113 22:39:20.460" endtime="20251113 22:39:20.665"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:20.460" endtime="20251113 22:39:20.665"/>
+</kw>
+<kw name="Verify Already in Login Page" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20251113 22:39:21.330" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginTV</msg>
+<status status="PASS" starttime="20251113 22:39:20.666" endtime="20251113 22:39:21.331"/>
+</kw>
+<kw name="Verify Element Exists" library="BaseKeywords">
+<arg>${LOGIN_TITLE}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20251113 22:39:21.356" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginTV</msg>
+<status status="PASS" starttime="20251113 22:39:21.333" endtime="20251113 22:39:21.356"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:21.333" endtime="20251113 22:39:21.356"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:20.665" endtime="20251113 22:39:21.356"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:18.656" endtime="20251113 22:39:21.356"/>
+</kw>
+<kw name="Login With Credentials" library="LoginPage">
+<arg>bod@example.com</arg>
+<arg>10203040</arg>
+<kw name="Enter Username" library="LoginPage">
+<arg>${username}</arg>
+<kw name="Input Text By Id" library="BaseKeywords">
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:21.359" level="INFO">Typing text 'bod@example.com' into text field 'id=com.saucelabs.mydemoapp.android:id/nameET'</msg>
+<msg timestamp="20251113 22:39:21.400" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<status status="PASS" starttime="20251113 22:39:21.357" endtime="20251113 22:39:21.400"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:21.357" endtime="20251113 22:39:21.400"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:21.357" endtime="20251113 22:39:21.400"/>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<arg>${password}</arg>
+<kw name="Input Text By Id" library="BaseKeywords">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:21.402" level="INFO">Typing text '10203040' into text field 'id=com.saucelabs.mydemoapp.android:id/passwordET'</msg>
+<msg timestamp="20251113 22:39:21.945" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/passwordET</msg>
+<status status="PASS" starttime="20251113 22:39:21.401" endtime="20251113 22:39:21.945"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:21.401" endtime="20251113 22:39:21.946"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:21.400" endtime="20251113 22:39:21.946"/>
+</kw>
+<kw name="Click Login" library="LoginPage">
+<kw name="Click Element By Id" library="BaseKeywords">
+<arg>${LOGIN_BUTTON}</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:21.950" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg timestamp="20251113 22:39:22.536" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<status status="PASS" starttime="20251113 22:39:21.947" endtime="20251113 22:39:22.536"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:21.947" endtime="20251113 22:39:22.536"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:21.946" endtime="20251113 22:39:22.536"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:21.357" endtime="20251113 22:39:22.536"/>
+</kw>
+<kw name="Verify Dashboard Visible" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${PAGE_TITLE}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20251113 22:39:23.299" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/productTV
+criteria is com.saucelabs.mydemoapp.android:id/productTV</msg>
+<status status="PASS" starttime="20251113 22:39:22.536" endtime="20251113 22:39:23.300"/>
+</kw>
+<kw name="Verify Element Exists" library="BaseKeywords">
+<arg>${PAGE_TITLE}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20251113 22:39:23.332" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/productTV</msg>
+<status status="PASS" starttime="20251113 22:39:23.301" endtime="20251113 22:39:23.333"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:23.300" endtime="20251113 22:39:23.333"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:22.536" endtime="20251113 22:39:23.333"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:18.654" endtime="20251113 22:39:23.333"/>
+</test>
+<test id="s1-s1-t2" name="Login Test Invalid Credentials" line="14">
+<kw name="Go To Login Page" library="HomePage">
+<kw name="Click Button Menu" library="HomePage">
+<kw name="Click Element By Id" library="BaseKeywords">
+<arg>${MENU_BUTTON}</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:23.337" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/menuIV'.</msg>
+<msg timestamp="20251113 22:39:24.309" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/menuIV</msg>
+<status status="PASS" starttime="20251113 22:39:23.335" endtime="20251113 22:39:24.309"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:23.335" endtime="20251113 22:39:24.310"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:23.334" endtime="20251113 22:39:24.310"/>
+</kw>
+<kw name="Click Login Text Button" library="HomePage">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_TEXTBUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:24.314" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Log In"]'.</msg>
+<msg timestamp="20251113 22:39:24.428" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Log In"]</msg>
+<status status="PASS" starttime="20251113 22:39:24.311" endtime="20251113 22:39:24.428"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:24.310" endtime="20251113 22:39:24.428"/>
+</kw>
+<kw name="Verify Already in Login Page" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20251113 22:39:25.040" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginTV
+criteria is com.saucelabs.mydemoapp.android:id/loginTV</msg>
+<status status="PASS" starttime="20251113 22:39:24.428" endtime="20251113 22:39:25.041"/>
+</kw>
+<kw name="Verify Element Exists" library="BaseKeywords">
+<arg>${LOGIN_TITLE}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20251113 22:39:25.072" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginTV</msg>
+<status status="PASS" starttime="20251113 22:39:25.043" endtime="20251113 22:39:25.072"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:25.042" endtime="20251113 22:39:25.072"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:24.428" endtime="20251113 22:39:25.072"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:23.334" endtime="20251113 22:39:25.072"/>
+</kw>
+<kw name="Login With Credentials" library="LoginPage">
+<arg>test@example.com</arg>
+<arg>10203040</arg>
+<kw name="Enter Username" library="LoginPage">
+<arg>${username}</arg>
+<kw name="Input Text By Id" library="BaseKeywords">
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:25.075" level="INFO">Typing text 'test@example.com' into text field 'id=com.saucelabs.mydemoapp.android:id/nameET'</msg>
+<msg timestamp="20251113 22:39:25.109" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<status status="PASS" starttime="20251113 22:39:25.073" endtime="20251113 22:39:25.109"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:25.073" endtime="20251113 22:39:25.109"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:25.073" endtime="20251113 22:39:25.109"/>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<arg>${password}</arg>
+<kw name="Input Text By Id" library="BaseKeywords">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:25.112" level="INFO">Typing text '10203040' into text field 'id=com.saucelabs.mydemoapp.android:id/passwordET'</msg>
+<msg timestamp="20251113 22:39:25.628" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/passwordET</msg>
+<status status="PASS" starttime="20251113 22:39:25.110" endtime="20251113 22:39:25.628"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:25.110" endtime="20251113 22:39:25.628"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:25.110" endtime="20251113 22:39:25.628"/>
+</kw>
+<kw name="Click Login" library="LoginPage">
+<kw name="Click Element By Id" library="BaseKeywords">
+<arg>${LOGIN_BUTTON}</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:25.632" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg timestamp="20251113 22:39:26.199" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<status status="PASS" starttime="20251113 22:39:25.629" endtime="20251113 22:39:26.199"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:25.629" endtime="20251113 22:39:26.199"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:25.628" endtime="20251113 22:39:26.199"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:25.073" endtime="20251113 22:39:26.199"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20251113 22:39:31.202" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20251113 22:39:26.200" endtime="20251113 22:39:31.202"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:23.334" endtime="20251113 22:39:31.203"/>
+</test>
+<test id="s1-s1-t3" name="Login Without Username" line="20">
+<kw name="Go To Login Page" library="HomePage">
+<kw name="Click Button Menu" library="HomePage">
+<kw name="Click Element By Id" library="BaseKeywords">
+<arg>${MENU_BUTTON}</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:31.212" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/menuIV'.</msg>
+<msg timestamp="20251113 22:39:32.247" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/menuIV</msg>
+<status status="PASS" starttime="20251113 22:39:31.207" endtime="20251113 22:39:32.248"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:31.206" endtime="20251113 22:39:32.248"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:31.205" endtime="20251113 22:39:32.248"/>
+</kw>
+<kw name="Click Login Text Button" library="HomePage">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_TEXTBUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:32.252" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Log In"]'.</msg>
+<msg timestamp="20251113 22:39:32.362" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Log In"]</msg>
+<status status="PASS" starttime="20251113 22:39:32.249" endtime="20251113 22:39:32.363"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:32.248" endtime="20251113 22:39:32.363"/>
+</kw>
+<kw name="Verify Already in Login Page" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20251113 22:39:33.061" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginTV</msg>
+<status status="PASS" starttime="20251113 22:39:32.364" endtime="20251113 22:39:33.061"/>
+</kw>
+<kw name="Verify Element Exists" library="BaseKeywords">
+<arg>${LOGIN_TITLE}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20251113 22:39:33.095" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginTV</msg>
+<status status="PASS" starttime="20251113 22:39:33.063" endtime="20251113 22:39:33.095"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.062" endtime="20251113 22:39:33.095"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:32.363" endtime="20251113 22:39:33.095"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:31.205" endtime="20251113 22:39:33.095"/>
+</kw>
+<kw name="Login Without Username And Password" library="LoginPage">
+<kw name="Click Login" library="LoginPage">
+<kw name="Click Element By Id" library="BaseKeywords">
+<arg>${LOGIN_BUTTON}</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:33.098" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg timestamp="20251113 22:39:33.763" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<status status="PASS" starttime="20251113 22:39:33.096" endtime="20251113 22:39:33.763"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.096" endtime="20251113 22:39:33.763"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.096" endtime="20251113 22:39:33.763"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.095" endtime="20251113 22:39:33.764"/>
+</kw>
+<kw name="Verify Username Error Message" library="LoginPage">
+<kw name="Verify Element Exists" library="BaseKeywords">
+<arg>${USERNAME_ERROR_TEXT}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20251113 22:39:33.807" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameErrorTV</msg>
+<status status="PASS" starttime="20251113 22:39:33.765" endtime="20251113 22:39:33.807"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.765" endtime="20251113 22:39:33.807"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.764" endtime="20251113 22:39:33.807"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:31.204" endtime="20251113 22:39:33.807"/>
+</test>
+<test id="s1-s1-t4" name="Logibn WIthout Password" line="26">
+<kw name="Go To Login Page" library="HomePage">
+<kw name="Click Button Menu" library="HomePage">
+<kw name="Click Element By Id" library="BaseKeywords">
+<arg>${MENU_BUTTON}</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:33.810" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/menuIV'.</msg>
+<msg timestamp="20251113 22:39:34.781" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/menuIV</msg>
+<status status="PASS" starttime="20251113 22:39:33.808" endtime="20251113 22:39:34.781"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.808" endtime="20251113 22:39:34.782"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.808" endtime="20251113 22:39:34.782"/>
+</kw>
+<kw name="Click Login Text Button" library="HomePage">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_TEXTBUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:34.786" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Log In"]'.</msg>
+<msg timestamp="20251113 22:39:34.895" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Log In"]</msg>
+<status status="PASS" starttime="20251113 22:39:34.783" endtime="20251113 22:39:34.895"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:34.782" endtime="20251113 22:39:34.896"/>
+</kw>
+<kw name="Verify Already in Login Page" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20251113 22:39:35.488" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginTV</msg>
+<status status="PASS" starttime="20251113 22:39:34.896" endtime="20251113 22:39:35.488"/>
+</kw>
+<kw name="Verify Element Exists" library="BaseKeywords">
+<arg>${LOGIN_TITLE}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20251113 22:39:35.512" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginTV</msg>
+<status status="PASS" starttime="20251113 22:39:35.489" endtime="20251113 22:39:35.512"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:35.489" endtime="20251113 22:39:35.512"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:34.896" endtime="20251113 22:39:35.512"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.808" endtime="20251113 22:39:35.512"/>
+</kw>
+<kw name="Login Without Password" library="LoginPage">
+<arg>test@example.com</arg>
+<kw name="Enter Username" library="LoginPage">
+<arg>${username}</arg>
+<kw name="Input Text By Id" library="BaseKeywords">
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:35.515" level="INFO">Typing text 'test@example.com' into text field 'id=com.saucelabs.mydemoapp.android:id/nameET'</msg>
+<msg timestamp="20251113 22:39:35.547" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<status status="PASS" starttime="20251113 22:39:35.513" endtime="20251113 22:39:35.547"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:35.513" endtime="20251113 22:39:35.547"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:35.513" endtime="20251113 22:39:35.547"/>
+</kw>
+<kw name="Click Login" library="LoginPage">
+<kw name="Click Element By Id" library="BaseKeywords">
+<arg>${LOGIN_BUTTON}</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20251113 22:39:35.549" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg timestamp="20251113 22:39:36.717" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<status status="PASS" starttime="20251113 22:39:35.548" endtime="20251113 22:39:36.718"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:35.548" endtime="20251113 22:39:36.718"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:35.547" endtime="20251113 22:39:36.718"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:35.513" endtime="20251113 22:39:36.718"/>
+</kw>
+<kw name="Verify Password Error Message" library="LoginPage">
+<kw name="Verify Element Exists" library="BaseKeywords">
+<arg>${PASSWORD_ERROR_TEXT}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>id=${element_id}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20251113 22:39:36.765" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/passwordErrorTV</msg>
+<status status="PASS" starttime="20251113 22:39:36.720" endtime="20251113 22:39:36.765"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:36.720" endtime="20251113 22:39:36.765"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:36.719" endtime="20251113 22:39:36.765"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:33.807" endtime="20251113 22:39:36.765"/>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20251113 22:39:36.766" endtime="20251113 22:39:40.230"/>
+</kw>
+<status status="PASS" starttime="20251113 22:39:15.042" endtime="20251113 22:39:40.230"/>
+</suite>
+<status status="PASS" starttime="20251113 22:39:15.033" endtime="20251113 22:39:40.231"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Login">Login</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Login Test">Login.Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
