@@ -36,6 +36,7 @@ robot -d results tests/login/login_test.robot
 ```
 
 ## 📂 Struktur Folder
+```bash
 mobile-automation-robot/
 ├── resources/
 │   ├── keywords/
@@ -45,3 +46,4 @@ mobile-automation-robot/
 ├── tests/                     # Test cases
 ├── results/                   # Report hasil test di ignore di git
 └── requirements.txt
+```
